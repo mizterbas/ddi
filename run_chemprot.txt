@@ -1,0 +1,20 @@
+!python -m albert.run_classifier \
+  --data_dir=gs://bas_capstone/cs9-3/REdatasets/chemprot_66 \
+  --output_dir=gs://bas_capstone/cs9-3/REoutput/chemprot_base_p \
+  --init_checkpoint=gs://bas_capstone/cs9-3/sts/model/PUBMED-base/bioalbert1.0.1_output_model_model.ckpt-best \
+  --albert_config_file=gs://bas_capstone/cs9-3/sts/model/PUBMED-base/albert_config.json \
+  --spm_model_file=gs://bas_capstone/cs9-3/sts/model/PUBMED-base/30k-clean.model \
+  --vocab_file=gs://bas_capstone/cs9-3/sts/model/PUBMED-base/30k-clean.vocab \
+  --do_train=True \
+  --do_eval=True \
+  --do_predict=True \
+  --do_lower_case \
+  --max_seq_length=128 \
+  --task_name=chemprot \
+  --warmup_step=1000 \
+  --learning_rate=3e-5 \
+  --train_step=10000 \
+  --train_batch_size=32 \
+  --save_checkpoints_steps=500 \
+  --tpu_name=$TPU_ADDRESS \
+  --use_tpu=True
