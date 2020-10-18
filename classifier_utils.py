@@ -243,7 +243,7 @@ class DDIProcessor(DataProcessor):
 
   def get_labels(self):
     """See base class."""
-    return [i.lower() for i in ["DDI-mechanism", "DDI-effect", "DDI-advise", "DDI-int"]]
+    return [i.lower() for i in ["DDI-mechanism", "DDI-effect", "DDI-advise", "DDI-int", "DDI-false"]]
 
   def _create_examples(self, lines, set_type):
     """Creates examples for the training and dev sets."""
@@ -281,7 +281,7 @@ class ChemProtProcessor(DataProcessor):
 
     def get_labels(self):
         """See base class."""
-        return [i.lower() for i in ["CPR:3", "CPR:4", "CPR:5", "CPR:6", "CPR:9"]]
+        return [i.lower() for i in ["CPR:3", "CPR:4", "CPR:5", "CPR:6", "CPR:9", "false"]]
     
     def _create_examples(self, lines, set_type):
        """Creates examples for the training and dev sets."""
