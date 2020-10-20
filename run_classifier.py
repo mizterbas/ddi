@@ -156,7 +156,8 @@ def main(_):
       "qnli": classifier_utils.QnliProcessor,
       "wnli": classifier_utils.WnliProcessor,
       "chemprot": classifier_utils.ChemProtProcessor,
-      "ddi": classifier_utils.DDIProcessor
+      "ddi": classifier_utils.DDIProcessor,
+      "i2b2": classifier_utils.i2b2Processor
   }
 
   if not FLAGS.do_train and not FLAGS.do_eval and not FLAGS.do_predict:
