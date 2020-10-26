@@ -253,13 +253,13 @@ class MedNLIProcessor(DataProcessor):
         for (i, line) in enumerate(lines):
             if i == 0:
                 continue
-            guid = line[1]
-            text_a = self.process_text(line[2])
-            text_b = self.process_text(line[3])
+            guid = line[0]
+            text_a = self.process_text(line[1])
+            text_b = self.process_text(line[2])
             if set_type == "test":
                 label = self.get_labels()[-1]
             else:
-                label = self.process_text(line[0])
+                label = self.process_text(line[-1])
             examples.append(
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
