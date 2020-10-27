@@ -158,7 +158,8 @@ def main(_):
       "chemprot": classifier_utils.ChemProtProcessor,
       "ddi": classifier_utils.DDIProcessor,
       "i2b2": classifier_utils.i2b2Processor,
-      "mednli": classifier_utils.MedNLIProcessor
+      "mednli": classifier_utils.MedNLIProcessor,
+      "clefe": classifier_utils.CLEFEProcessor
   }
 
   if not FLAGS.do_train and not FLAGS.do_eval and not FLAGS.do_predict:
